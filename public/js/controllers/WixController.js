@@ -5,15 +5,14 @@
  * @return Object         Class Object
  */		
 define(["require",
-    "models/SettingsModel", "views/SettingsView"], 
-	function (require, SettingsModel, SettingsView) {
+    "models/SettingsModel", "views/SettingsView",
+    "models/WidgetModel", "views/WidgetView"], 
+	function (require, SettingsModel, SettingsView, WidgetModel, WidgetView) {
     "use strict";
 	
     var WixController = Backbone.Router.extend({
     	// reuse postlist collection and view while navigating
     	// unlike removing a single post view when paginating
-    	posts: null, //PostsCollection
-    	postsList: null, //PostsListView
     	routes: {
     		"": "home",
             "callback": "showCallback",
@@ -43,7 +42,12 @@ define(["require",
         },
     	showWidget: function () {
     		console.log("widget");
-			
+			var widgetModel = new WidgetModel();
+
+            var widgetView = new WidgetView({
+                el: "body",
+                model: widgetModel
+            }); 
     	}
 
     });
