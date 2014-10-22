@@ -1,36 +1,25 @@
-The Secrets Of The Full Stack Ninja - The Client Side Boilerplate
+WIX WIDGET
 ======
-
-A modern fullstack web application boilerplate. 
 
 Technology Stack: node, npm, git, grunt, expressjs, requirejs, backbonejs, marionettejs, twitter bootstrap
 
-Install
+DEVELOP
 ----
-```sh
-	git clone -b boilerplate --single-branch git@github.com:hamecoded/myBlog.git
-```
-or
 
-```sh
-	git init 
-	git fetch git@github.com:hamecoded/myBlog.git boilerplate:refs/remotes/origin/boilerplate
-```
-
-Distribute
-----
 ```sh
 npm install
-grunt build
+bower install
+grunt
 ```
 
 ```sh
 NODE_ENV=production node server.js
 ```
 
-License
+DISTRIBUTE
 ----
 
-MIT
-
+```sh
+grunt build
+```
 
