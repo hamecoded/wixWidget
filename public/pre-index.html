@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>App Settings &bull; @VERSION</title>
+
+	<!-- @if DEBUG=true -->
+	<link rel="stylesheet" href="css/main.css" />
+	<script src="//localhost:35729/livereload.js"></script>
+	<!-- @endif -->
+
+	<!-- @if DEBUG=false -->
+	<link rel="stylesheet" href="css/@APP_NAME.css?rel=@@timestamp" />
+	<!-- @endif -->
+
+</head>
+<body wix-ui>
+ 
+
+	<script type="text/javascript" src="//sslstatic.wix.com/services/js-sdk/1.37.0/js/wix.min.js"></script>
+	<!-- @if DEBUG=true -->
+	<script type="text/javascript">
+		window.require= {
+			baseUrl: "../"
+		};
+	</script>
+    <script type="text/javascript" 
+    	data-main="js/@APP_NAME.js" 
+    	src="bower_components/requirejs/require.js"></script>
+   	<!-- @endif -->
+
+	<!-- @if DEBUG=false -->
+    <script type="text/javascript" 
+    	data-main="js/@APP_NAME.js?rel=@@timestamp" 
+    	src="bower_components/requirejs/require.js?rel=@@timestamp"></script>
+   	<!-- @endif -->
+</body>
+</html>
