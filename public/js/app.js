@@ -19,7 +19,7 @@ require(["js/require.config"], function (baseConfig) {
     	//app specific require
 		//app specific require
         require(["controllers/WixController"], function (WixController) {
-            window.router = new WixController;
+            window.router = new WixController();
             Backbone.history.start({pushState: true});
 
             /**

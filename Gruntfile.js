@@ -150,6 +150,7 @@ module.exports = function (grunt) {
                         "marionette": "./bower_components/marionette/lib/backbone.marionette.min",
                         "bootstrap": "./bower_components/bootstrap/dist/js/bootstrap.min",
 
+                        "wix.ui": "./bower_components/wix-ui-lib2/ui-lib",
                         // Require Modules to be used as pragmas
                         // ---------
                         "text": "./bower_components/requirejs-text/text",
@@ -157,10 +158,10 @@ module.exports = function (grunt) {
                         // Backbone Folder Structure
                         // -------------------
                         "models": "js/models",
-                        "collections": "collections",
-                        "routers": "routers",
-                        "views": "views",
-                        "templates": "./templates"
+                        "collections": "js/collections",
+                        "controllers": "js/controllers",
+                        "views": "js/views",
+                        "templates": "templates"
                 },
                 shim:{
                     //Globally exposed variables:
@@ -277,6 +278,7 @@ module.exports = function (grunt) {
                 files: [
                     {expand: true, cwd: 'public/', src: ['img/**'], dest: 'dist/'},
                     {expand: true, cwd: 'public/bower_components', src: ['**'], dest: 'dist/bower_components'},
+                    {expand: true, cwd: 'public/templates', src: ['**'], dest: 'dist/templates'},
                     {expand: true, cwd: 'tmp/css/', src: ['<%= pkg.name %>.min.css'], dest: 'dist/css'}
                 ]
             },
